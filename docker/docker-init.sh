@@ -15,6 +15,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+# Remove below line and last line to uncomment this file.
+<<'COMMENTS'
 set -e
 
 STEP_CNT=4
@@ -59,3 +62,5 @@ fi
 echo_step "4" "Starting" "Setting up roles and perms"
 superset init
 echo_step "4" "Complete" "Setting up roles and perms"
+
+COMMENTS
