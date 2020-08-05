@@ -41,6 +41,7 @@ flask-sqlalchemy==2.4.1   # via flask-appbuilder, flask-migrate
 flask-talisman==0.7.0     # via apache-superset (setup.py)
 flask-wtf==0.14.3         # via apache-superset (setup.py), flask-appbuilder
 flask==1.1.2              # via apache-superset (setup.py), flask-appbuilder, flask-babel, flask-caching, flask-compress, flask-jwt-extended, flask-login, flask-migrate, flask-openid, flask-sqlalchemy, flask-wtf
+flask-oidc==1.4.0         # via flask-appbuilder
 future==0.18.2            # via celery
 geographiclib==1.50       # via geopy
 geopy==1.22.0             # via apache-superset (setup.py)

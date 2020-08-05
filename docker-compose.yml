@@ -61,6 +61,9 @@ services:
       - 8088:8088
     depends_on: *superset-depends-on
     volumes: *superset-volumes
+    extra_hosts:
+      - "keycloak.dev.local:172.17.0.1"
+      - "app.dev.local:172.17.0.1"
 
   superset-init:
     build: *superset-build

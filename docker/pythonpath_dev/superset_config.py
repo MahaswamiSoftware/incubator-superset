@@ -26,6 +26,8 @@ import logging
 import os
 
 from cachelib.file import FileSystemCache
+from security import OIDCSecurityManager
+from flask_appbuilder.security.manager import AUTH_OID
 
 logger = logging.getLogger()
 
@@ -111,3 +113,11 @@ except ImportError:
     logger.info("Using default Docker config...")
 
 PUBLIC_ROLE_LIKE_GAMMA = True
+
+AUTH_TYPE = AUTH_OID
+OIDC_CLIENT_SECRETS = '/usr/local/lib/python3.6/site-packages/flask_oidc/keycloak_secret.json'
+OIDC_ID_TOKEN_COOKIE_SECURE = False
+OIDC_REQUIRE_VERIFIED_EMAIL = False
+AUTH_USER_REGISTRATION = True
+AUTH_USER_REGISTRATION_ROLE = 'Admin'
+CUSTOM_SECURITY_MANAGER = OIDCSecurityManager

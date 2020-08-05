@@ -22,10 +22,15 @@ FROM preset/superset:dev
 
 COPY ./requirements* ./docker/requirements* /app/
 
+COPY ./keycloak_secret.json /app/
+
 USER root
 RUN cd /app \
     && pip install -e . \
     && pip install --no-cache -r requirements.txt -r requirements-dev.txt \
     && pip install --no-cache -r requirements-extra.txt \
     && pip install --no-cache -r requirements-local.txt || true
+
+RUN cp keycloak_secret.json /usr/local/lib/python3.6/site-packages/flask_oidc/
+
 USER superset
